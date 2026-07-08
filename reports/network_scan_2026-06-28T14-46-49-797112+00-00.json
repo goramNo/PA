@@ -1,0 +1,11 @@
+{
+  "module": "network_scanner",
+  "scan_type": "slow_recon",
+  "timestamp": "2026-06-28T14:46:49.797112+00:00",
+  "network_range": "172.20.10.0/24",
+  "status": "completed",
+  "hosts": [],
+  "errors": [
+    "[discovery] nmap discovery timed out after 120s"
+  ]
+}
