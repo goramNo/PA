@@ -1,0 +1,347 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    background:#0b1220;
+
+    color:#ecf2ff;
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:240px;
+
+    background:#111827;
+
+    border-right:1px solid #1f2937;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-bottom:1px solid #1f2937;
+
+}
+
+.logo h1{
+
+    color:#3b82f6;
+
+    font-size:42px;
+
+}
+
+.logo span{
+
+    color:#94a3b8;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+.sidebar li{
+
+    padding:18px 25px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    color:#94a3b8;
+
+}
+
+.sidebar li:hover{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+.active{
+
+    background:#2563eb;
+
+    color:white !important;
+
+}
+
+/* ===========================
+   CONTENU
+=========================== */
+
+.content{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+header{
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    color:#60a5fa;
+
+    font-size:34px;
+
+}
+
+header p{
+
+    margin-top:8px;
+
+    color:#94a3b8;
+
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.card{
+
+    background:#111827;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    border:1px solid #1f2937;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.4);
+
+}
+
+.card h2{
+
+    color:#94a3b8;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    font-size:42px;
+
+    color:#60a5fa;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   AGENTS
+=========================== */
+
+#agentContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:25px;
+
+}
+
+.agent{
+
+    background:#111827;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    border:1px solid #1f2937;
+
+}
+
+.agent h2{
+
+    color:#60a5fa;
+
+    margin-bottom:15px;
+
+}
+
+.agentInfo{
+
+    margin-bottom:20px;
+
+    color:#cbd5e1;
+
+}
+
+.agentInfo p{
+
+    margin:6px 0;
+
+}
+
+.host{
+
+    background:#0f172a;
+
+    border-left:4px solid #3b82f6;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border-radius:10px;
+
+}
+
+.host h3{
+
+    margin-bottom:10px;
+
+    color:#60a5fa;
+
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    margin:4px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    background:#16a34a;
+
+}
+
+.closed{
+
+    background:#6b7280;
+
+}
+
+.filtered{
+
+    background:#dc2626;
+
+}
+
+/* ===========================
+   ONLINE
+=========================== */
+
+.online{
+
+    color:#22c55e;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:800px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+#agentContainer{
+
+grid-template-columns:1fr;
+
+}
+
+}
