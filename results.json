@@ -1,0 +1,55 @@
+{
+    "Hostname": "Dracks",
+    "Username": "dracks",
+    "OS": "Linux-6.18.34+rpt-rpi-v8-aarch64-with-glibc2.41",
+    "Architecture": "aarch64",
+    "Python_Version": "3.13.5",
+    "Date": "2026-07-09 15:18:54",
+    "Users": [
+        {
+            "Name": "root"
+        },
+        {
+            "Name": "daemon"
+        },
+        {
+            "Name": "bin"
+        },
+        {
+            "Name": "sys"
+        },
+        {
+            "Name": "sync"
+        },
+        {
+            "Name": "games"
+        },
+        {
+            "Name": "man"
+        },
+        {
+            "Name": "lp"
+        },
+        {
+            "Name": "mail"
+        },
+        {
+            "Name": "news"
+        },
+        {
+            "Name": "uucp"
+        },
+        {
+            "Name": "proxy"
+        },
+        {
+            "Name": "www-data"
+        },
+        {
+            "Name": "backup"
+        },
+        {
+            "Name": "list"
+        }
+    ]
+}
