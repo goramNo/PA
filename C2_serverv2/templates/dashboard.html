@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Red Team Command Center</title>
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h1>C2</h1>
+
+        <span>Red Team</span>
+
+    </div>
+
+    <ul>
+
+        <li class="active">
+
+            Dashboard
+
+        </li>
+
+        <li>
+
+            Scanner
+
+        </li>
+
+        <li>
+
+            Profiler
+
+        </li>
+
+        <li>
+
+            Agents
+
+        </li>
+
+        <li>
+
+            Logs
+
+        </li>
+
+        <li>
+
+            Paramètres
+
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<h1>
+
+RED TEAM COMMAND CENTER
+
+</h1>
+
+<p>
+
+Projet Annuel ESGI • Raspberry Pi Zero 2 W
+
+</p>
+
+</header>
+
+<div class="stats">
+
+<div class="card">
+
+<h2>Agents</h2>
+
+<p id="agentCount">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Hosts</h2>
+
+<p id="hostCount">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Ports</h2>
+
+<p id="portCount">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Dernier scan</h2>
+
+<p id="lastScan">--</p>
+
+</div>
+
+</div>
+
+<div id="agentContainer">
+
+</div>
+
+</div>
+
+<script
+src="{{ url_for('static', filename='js/dashboard.js') }}">
+</script>
+
+</body>
+
+</html>

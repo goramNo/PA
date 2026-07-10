@@ -1,0 +1,141 @@
+Salut, j'ai relu ton module Reporter et il est vraiment propre. :thumbsup:
+
+Avant de l'intégrer au projet, j'aimerais que tu fasses quelques améliorations.
+
+Priorité 1 — Découper le module
+
+Le fichier devient très gros (~500 lignes).
+
+J'aimerais qu'il soit organisé comme ça :
+
+reporter/
+
+├── __init__.py
+├── generator.py
+├── renderer.py
+├── statistics.py
+├── risk.py
+└── templates/
+
+Le but est d'avoir un code plus maintenable.
+
+Priorité 2 — Compatibilité avec notre scanner
+
+Le module doit accepter directement le JSON envoyé par notre scanner actuel.
+
+Aujourd'hui notre scanner envoie une structure du type :
+
+{
+    "agent": {...},
+    "modules": {
+        "scanner": {
+            "hosts": [...]
+        }
+    }
+}
+
+Le Reporter doit pouvoir le parser sans qu'on ait à modifier le scanner.
+
+Priorité 3 — Métadonnées supplémentaires
+
+Ajouter dans le rapport :
+
+Agent (hostname)
+Version du reporter
+Version du scanner
+Durée du scan
+Réseau scanné
+Nombre de machines
+Nombre de ports ouverts
+Date de génération
+ID unique du rapport
+Priorité 4 — Améliorer le calcul du risque
+
+Aujourd'hui le score est uniquement basé sur quelques ports sensibles.
+
+J'aimerais un calcul un peu plus intelligent.
+
+Exemple :
+
+nombre total de ports ouverts
+présence de SMB (445)
+présence de RDP (3389)
+présence de FTP/Telnet
+plusieurs services sensibles sur une même machine
+plusieurs machines exposées
+
+Le score doit être plus représentatif.
+
+Priorité 5 — Rapport HTML
+
+Le HTML est propre mais peut être amélioré.
+
+J'aimerais :
+
+barre de résumé en haut
+tableau des machines
+badges de couleur
+score de risque visible
+style proche du dashboard
+responsive
+Priorité 6 — Export PDF (bonus)
+
+Si possible générer automatiquement :
+
+rapport.html
+
+rapport.json
+
+rapport.pdf
+
+Le PDF est un bonus.
+
+Priorité 7 — Historique
+
+Au lieu de tout mettre dans le même dossier :
+
+reports/
+
+Créer automatiquement :
+
+reports/
+
+2026/
+    06/
+        28/
+            scan_001.html
+            scan_001.json
+Priorité 8 — API propre
+
+Le module doit rester totalement indépendant.
+
+Une seule fonction publique :
+
+generate_report(scan_results)
+
+Elle doit retourner :
+
+{
+    "data": ...,
+    "html": ...,
+    "json": ...,
+    "html_path": ...,
+    "json_path": ...
+}
+Priorité 9 — Documentation
+
+Ajouter un README expliquant :
+
+le format d'entrée attendu ;
+la structure des rapports générés ;
+comment intégrer le module dans un autre projet ;
+un exemple d'utilisation.
+Priorité 10 — Préparer l'intégration
+
+Le but est qu'on puisse simplement faire :
+
+from reporter import generate_report
+
+generate_report(scan_results)
+
+sans modifier le reste de notre architecture.
